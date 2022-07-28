@@ -206,6 +206,7 @@ class StockWarehouseOrderpoint(models.Model):
         return action
 
     def action_replenish(self):
+        now = datetime.now()
         try:
             self._procure_orderpoint_confirm(company_id=self.env.company)
         except UserError as e:
@@ -219,7 +220,6 @@ class StockWarehouseOrderpoint(models.Model):
                 'views': [(self.env.ref('product.product_normal_form_view').id, 'form')],
                 'context': {'form_view_initial_mode': 'edit'}
             }, _('Edit Product'))
-        now = datetime.now()
         notification = False
         if len(self) == 1:
             notification = self.with_context(written_after=now)._get_replenishment_order_notification()
@@ -232,7 +232,8 @@ class StockWarehouseOrderpoint(models.Model):
         self.trigger = 'auto'
         return self.action_replenish()
 
-    @api.depends('product_id', 'location_id', 'product_id.stock_move_ids', 'product_id.stock_move_ids.state', 'product_id.stock_move_ids.product_uom_qty')
+    @api.depends('product_id', 'location_id', 'product_id.stock_move_ids', 'product_id.stock_move_ids.state',
+                 'product_id.stock_move_ids.date', 'product_id.stock_move_ids.product_uom_qty')
     def _compute_qty(self):
         orderpoints_contexts = defaultdict(lambda: self.env['stock.warehouse.orderpoint'])
         for orderpoint in self:
@@ -445,7 +446,7 @@ class StockWarehouseOrderpoint(models.Model):
     def _get_replenishment_order_notification(self):
         self.ensure_one()
         domain = [('orderpoint_id', 'in', self.ids)]
-        if self.env.context.get('written_date'):
+        if self.env.context.get('written_after'):
             domain = expression.AND([domain, [('write_date', '>', self.env.context.get('written_after'))]])
         move = self.env['stock.move'].search(domain, limit=1)
         if move.picking_id:

@@ -673,14 +673,14 @@ msgstr "Anlegen"
 #: code:addons/web_editor/static/src/odoo-editor/src/OdooEditor.js:0
 #, python-format
 msgid "Create a list with numbering."
-msgstr ""
+msgstr "Eine Liste mit Nummerierung erstellen."
 
 #. module: web_editor
 #. openerp-web
 #: code:addons/web_editor/static/src/odoo-editor/src/OdooEditor.js:0
 #, python-format
 msgid "Create a simple bulleted list."
-msgstr ""
+msgstr "Erstellen Sie eine einfache Aufzählungsliste."
 
 #. module: web_editor
 #: model:ir.model.fields,field_description:web_editor.field_web_editor_converter_test_sub__create_uid
@@ -1014,6 +1014,14 @@ msgstr "Schriftgröße"
 
 #. module: web_editor
 #. openerp-web
+#: code:addons/web_editor/static/src/js/editor/snippets.editor.js:0
+#, python-format
+msgid "For technical reasons, this block cannot be dropped here"
+msgstr ""
+"Aus technischen Gründen kann dieser Baustein hier nicht abgelegt werden"
+
+#. module: web_editor
+#. openerp-web
 #: code:addons/web_editor/static/src/xml/ace.xml:0
 #, python-format
 msgid "Format"
@@ -1097,21 +1105,21 @@ msgstr "Überschrift 6"
 #: code:addons/web_editor/static/src/odoo-editor/src/OdooEditor.js:0
 #, python-format
 msgid "Heading 1"
-msgstr ""
+msgstr "Überschrift 1"
 
 #. module: web_editor
 #. openerp-web
 #: code:addons/web_editor/static/src/odoo-editor/src/OdooEditor.js:0
 #, python-format
 msgid "Heading 2"
-msgstr ""
+msgstr "Überschrift 2"
 
 #. module: web_editor
 #. openerp-web
 #: code:addons/web_editor/static/src/odoo-editor/src/OdooEditor.js:0
 #, python-format
 msgid "Heading 3"
-msgstr ""
+msgstr "Überschrift 3"
 
 #. module: web_editor
 #. openerp-web
@@ -1294,7 +1302,7 @@ msgstr ""
 #: code:addons/web_editor/static/src/odoo-editor/src/OdooEditor.js:0
 #, python-format
 msgid "Insert a table."
-msgstr ""
+msgstr "Tabelle einfügen."
 
 #. module: web_editor
 #. openerp-web
@@ -1330,6 +1338,12 @@ msgstr "Tabelle einfügen"
 #, python-format
 msgid "Install"
 msgstr "Installieren"
+
+#. module: web_editor
+#: code:addons/web_editor/models/ir_ui_view.py:0
+#, python-format
+msgid "Invalid field value for %s: %s"
+msgstr "Ungültiger Feldwert für %s: %s"
 
 #. module: web_editor
 #. openerp-web
@@ -1574,7 +1588,7 @@ msgstr "Normal"
 #: code:addons/web_editor/static/src/odoo-editor/src/OdooEditor.js:0
 #, python-format
 msgid "Numbered list"
-msgstr ""
+msgstr "Nummerierte Liste"
 
 #. module: web_editor
 #. openerp-web
@@ -2289,7 +2303,7 @@ msgstr ""
 #: code:addons/web_editor/static/src/odoo-editor/src/OdooEditor.js:0
 #, python-format
 msgid "Switch the text's direction."
-msgstr ""
+msgstr "Textrichtung ändern."
 
 #. module: web_editor
 #. openerp-web
@@ -2829,14 +2843,6 @@ msgid ""
 msgstr ""
 "Sie können Bilder über die Schaltfläche oben links auf dem Bildschirm "
 "hochladen."
-
-#. module: web_editor
-#: code:addons/web_editor/models/ir_qweb.py:0
-#: code:addons/web_editor/models/ir_qweb.py:0
-#, python-format
-msgid "You entered an invalid value, please try again."
-msgstr ""
-"Sie haben einen ungültigen Wert eingegeben, bitte versuchen Sie es erneut."
 
 #. module: web_editor
 #: code:addons/web_editor/controllers/main.py:0
